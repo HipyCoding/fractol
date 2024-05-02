@@ -6,7 +6,7 @@
 /*   By: candrese <candrese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 18:59:15 by candrese          #+#    #+#             */
-/*   Updated: 2024/05/02 14:14:15 by candrese         ###   ########.fr       */
+/*   Updated: 2024/05/02 14:45:40 by candrese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,16 @@ int	check_julia_values(char *s1, char *s2)
 
 int	args(int ac, char **argv, t_fractol *f)
 {
-	if (ac == 2 && (!ft_strncmp("mandelbrot", argv[1], 10)
+	if (ac == 2 && (!ft_strncmp("mandelbrot", argv[1], 11)
 			|| !ft_strncmp("ship", argv[1], 4)))
 		f->set = argv[1];
-	else if (ac == 2 && !ft_strncmp("julia", argv[1], 5))
+	else if (ac == 2 && !ft_strncmp("julia", argv[1], 6))
 	{
 		f->set = argv[1];
 		f->j_cy = -0.59;
 		f->j_cx = -0.4;
 	}
-	else if (ac == 4 && !ft_strncmp(argv[1], "julia", 5))
+	else if (ac == 4 && !ft_strncmp(argv[1], "julia", 6))
 	{
 		f->set = argv[1];
 		if (check_julia_values(argv[2], argv[3]))
