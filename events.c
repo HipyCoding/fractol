@@ -52,10 +52,8 @@ void	input(mlx_key_data_t input, void *param )
 // x_range = (f->x_max - f->x_min) / f->zoom;
 // converts old range to new range for narrowing or stretching of the fractal
 // f->x_min = x - ((double)f->mouse_x / WIDTH) * x_range;
-// x coordinate of mouse position subtracted by ( %factor * new range)
+// x coordinate of mouse position subtracted by ( %factor * new range) for new xmin
 // after that we update the rest of the fractal window-boundaries
-// for some y-operations we do 1 -... because vertical scale of the mlx window
-// is inverted. (origin point is in top left corner)
 
 void	zoom(double xdelta, double ydelta, void *param)
 {
