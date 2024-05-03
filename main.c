@@ -6,7 +6,7 @@
 /*   By: candrese <candrese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 18:59:15 by candrese          #+#    #+#             */
-/*   Updated: 2024/05/02 14:48:35 by candrese         ###   ########.fr       */
+/*   Updated: 2024/05/03 15:09:48 by candrese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,27 @@ void	init_to_winit(t_fractol *f)
 
 int	check_julia_values(char *s1, char *s2)
 {
-	while (*s1 != '\0')
+	int	i;
+
+	i = 0;
+	while (s1[i] != '\0')
 	{
-		if (*s1 == '-' || *s1 == '.' || (*s1 >= '0' && *s1 <= '9'))
-			s1++;
+		if (i > 15)
+			return (1);
+		if (s1[i] == '-' || s1[i] == '+' || s1[i] == '.'
+			|| (s1[i] >= '0' && s1[i] <= '9'))
+			i++;
 		else
 			return (1);
 	}
-	while (*s2 != '\0')
+	i = 0;
+	while (s2[i] != '\0')
 	{
-		if (*s2 == '-' || *s2 == '.' || (*s2 >= '0' && *s2 <= '9'))
-			s2++;
+		if (i > 15)
+			return (1);
+		if (s2[i] == '-' || s2[i] == '+' || s1[i] == '.'
+			|| (s2[i] >= '0' && s2[i] <= '9'))
+			i++;
 		else
 			return (1);
 	}
